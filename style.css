@@ -1,0 +1,59 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.bounce {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  background: #dd0000;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: -8px -8px 30px rgba(0,0,0,1) inset,
+    -28px -28px 50px rgba(177,0,0,1) inset,
+    18px 18px 60px 20px rgba(255,65,65,1) inset,
+    8px 8px 20px rgba(255,33,0,0.8) inset;
+}
+
+input[type=checkbox]:checked + .bounce {
+  animation: rimbalzo 1500ms ease-in alternate 3
+              ,rimbalzo2 1s 4490ms ease alternate 4
+              ,rimbalzo3 500ms 8480ms ease alternate 4
+    ;
+}
+
+label {
+  display: inline-block;
+  width:100px;
+  height: 40px;
+	background: #08C;
+	padding: 5px;
+	border: 1px solid rgba(0,0,0,.1);
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  over
+}
+
+#toggle {
+  display: none;
+}
+
+
+@keyframes rimbalzo {
+  from {top: 0px;}
+  to {top: 500px;}
+}
+
+@keyframes rimbalzo2 {
+  from {top: 500px;}
+  to {top: 200px;}
+}
+
+@keyframes rimbalzo3 {
+  from {top: 500px;}
+  to {top: 400px;}
+}
