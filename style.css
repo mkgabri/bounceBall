@@ -1,3 +1,14 @@
+:root {
+	/*dichiarazione variabili*/
+	--botton-color: #0388fc;
+	--botton-color-shadow: #0056a1;
+	--bounce-color: #00dd00;
+	--bounce-shadow: rgba(0,0,0,.5);
+	--font-main: 16px;
+	--line-height: 1.6;
+	
+}
+
 html {
   height: 100%;
   overflow: hidden;
@@ -7,7 +18,7 @@ html {
   height: 200px;
   width: 200px;
   position: relative;
-  background: #dd0000;
+  background: var(--bounce-color);
   margin: 0 auto;
   border-radius: 50%;  
 /*   box-shadow: -8px -8px 30px rgba(0,0,0,1) inset,
@@ -19,7 +30,7 @@ html {
 .shadow {
   position: relative;
   margin: 0 auto;
-  background: rgba(0,0,0,.5);
+  background: var(--bounce-shadow);
   top: 485px;
   height: 30px;
   width: 80px;
