@@ -9,33 +9,51 @@ html {
   position: relative;
   background: #dd0000;
   margin: 0 auto;
-  border-radius: 50%;
-  box-shadow: -8px -8px 30px rgba(0,0,0,1) inset,
+  border-radius: 50%;  
+/*   box-shadow: -8px -8px 30px rgba(0,0,0,1) inset,
     -28px -28px 50px rgba(177,0,0,1) inset,
     18px 18px 60px 20px rgba(255,65,65,1) inset,
-    8px 8px 20px rgba(255,33,0,0.8) inset;
+    8px 8px 20px rgba(255,33,0,0.8) inset; */
 }
 
-input[type=checkbox]:checked + .bounce {
-  animation: rimbalzo 1500ms ease-in alternate 3
+.shadow {
+  position: relative;
+  margin: 0 auto;
+  background: rgba(0,0,0,.5);
+  top: 485px;
+  height: 30px;
+  width: 80px;
+  z-index: -10;
+  border-radius: 50%;
+}
+
+input[type=checkbox]:checked ~ .bounce {
+  animation: rimbalzo 1500ms ease-in alternate 3 forwards
               ,rimbalzo2 1s 4490ms ease alternate 4
               ,rimbalzo3 500ms 8480ms ease alternate 4
     ;
 }
 
+input[type=checkbox]:checked ~ .shadow {
+  animation: shadow 1500ms ease-in alternate 3 forwards
+                  ,shadow2 1s 4490ms ease alternate 4
+              ,shadow3 500ms 8480ms ease alternate 4;
+}
+
 label {
   display: inline-block;
-  width:100px;
-  height: 40px;
+  width:120px;
+  height: 50px;
 	background: #08C;
 	padding: 5px;
 	border: 1px solid rgba(0,0,0,.1);
 	border-radius: 5px;
 	color: white;
 	font-weight: bold;
+  font-size: 2em;
+  font-family: sans-serif;
   text-align: center;
   vertical-align: middle;
-  over
 }
 
 #toggle {
@@ -56,4 +74,19 @@ label {
 @keyframes rimbalzo3 {
   from {top: 500px;}
   to {top: 400px;}
+}
+
+@keyframes shadow {
+  from {width: 80px; background: rgba(0,0,0,.5);}
+  to {width: 200px; background: rgba(0,0,0,1);}
+}
+
+@keyframes shadow2 {
+  from {width: 200px; background: rgba(0,0,0,1);}
+  to {width: 120px; background: rgba(0,0,0,.7);}
+}
+
+@keyframes shadow3 {
+  from {width: 200px; background: rgba(0,0,0,1);}
+  to {width: 160px; background: rgba(0,0,0,.9);}
 }
