@@ -1,10 +1,14 @@
 :root {
 	/*dichiarazione variabili*/
+	
 	--botton-color: #0388fc;
+	--botton-color-hover: #ff6e14;
 	--botton-color-shadow: #0056a1;
-	--bounce-color: #00dd00;
+	--bounce-color: #d00;
 	--bounce-shadow: rgba(0,0,0,.5);
-	--font-main: 16px;
+	--bg-color: #d4eafc;
+	--font-main: sans-serif;
+	--font-size: 16px;
 	--line-height: 1.6;
 	
 }
@@ -12,6 +16,15 @@
 html {
   height: 100%;
   overflow: hidden;
+  background-color: var(--bg-color);
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+*,*::after,*::before {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
 }
 
 .bounce {
@@ -52,19 +65,26 @@ input[type=checkbox]:checked ~ .shadow {
 }
 
 label {
-  display: inline-block;
-  width:120px;
-  height: 50px;
-	background: #08C;
+  	display: inline-block;
+  	width:120px;
+  	height: 50px;
+	background: var(--botton-color);
 	padding: 5px;
+	margin: 20px;
 	border: 1px solid rgba(0,0,0,.1);
 	border-radius: 5px;
 	color: white;
 	font-weight: bold;
-  font-size: 2em;
-  font-family: sans-serif;
-  text-align: center;
-  vertical-align: middle;
+  	font-size: 2em;
+  	font-family: inherit;
+  	text-align: center;
+  	vertical-align: middle;
+  	transition: background .5s, color .5s;
+}
+
+label:hover {
+	background: var(--botton-color-hover);
+	color: yellow; 
 }
 
 #toggle {
